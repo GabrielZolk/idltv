@@ -1,0 +1,58 @@
+footer {
+    width: 100vw;
+    height: 7vh;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding: 10px 20px;
+}
+
+footer a {
+    position: relative;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+footer a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #7D50E4;
+    transition: width 0.3s ease-in-out;
+}
+
+footer a:hover::after {
+    width: 100%;
+}
+
+footer a span {
+    color: white;
+}
+
+#twitch {
+    color: #7D50E4;
+}
+
+#instagram {
+    color: #ED01A4;
+}
+
+#youtube {
+    color: red;
+}
+
+#discord {
+    color: #5662F6;
+}
+
+#twitter {
+    color: #1D9BF0;
+}

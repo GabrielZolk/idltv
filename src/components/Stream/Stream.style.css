@@ -1,0 +1,43 @@
+.bg {
+    background-image: url('./bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 83vh;
+}
+
+.embed-twitch {
+    width: 72vw;
+    height: 80vh;
+    border: 4px solid #C4E800;
+    border-radius: 5px;
+}
+
+.embed-youtube {
+    width: 26vw;
+    height: 30vh;
+    border: 4px solid #C4E800;
+    border-radius: 5px;
+}
+
+.embed-chat {
+    width: 26vw;
+    height: 25vw;
+    border: 4px solid #C4E800;
+    border-radius: 5px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.right .embed-youtube {
+    margin-bottom: 20px;
+}
+
+.right {
+    margin-left: 10px;
+}

@@ -1,9 +1,7 @@
 header {
     width: 100vw;
     height: 10vh;
-    background-image: url('./navbar4.png');
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: black;
     display: flex;
     justify-content: space-between;
     padding: 10px 20px;
@@ -115,4 +113,7 @@ header nav ul li.active::after,
 header nav ul li:hover::after {
     width: 100%;
 }
-  
+
+header .stream ul li p.active {
+    color: #C4E800;
+}

@@ -1,7 +1,8 @@
 .bg {
-    background-image: url('./bg.png');
+    /* background-image: url('./bg.png');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
+    background: linear-gradient(to right, #6122f5,#4c04f5);
     height: 83vh;
 }
 

@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import './Navbar.style.css';
 import { BsEyeSlash, BsEye } from 'react-icons/bs';
 import { GameContext, GameModeContext } from '../../context/gameContext';
@@ -80,8 +80,8 @@ export default function Navbar() {
       </div>
       <nav>
         <ul>
-          <a href='/'><li className={activeTab === 'MULTI' ? 'active' : ''}>MULTI</li></a>
-          <a href='/cartinhas'><li className={activeTab === 'CARTINHAS' ? 'active' : ''}>CARTINHAS</li></a>
+          <Link to='/'><li className={activeTab === 'MULTI' ? 'active' : ''}>MULTI</li></Link>
+          <Link to='/cartinhas'><li className={activeTab === 'CARTINHAS' ? 'active' : ''}>CARTINHAS</li></Link>
         </ul>
       </nav>
     </header>

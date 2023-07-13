@@ -74,6 +74,7 @@
     .embed-youtube {
         width: 90vw !important;
         height: 45vh !important;
+        margin-left: 0 !important;
     }
     
     .embed-chat {

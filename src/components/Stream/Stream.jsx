@@ -45,7 +45,7 @@ export default function Stream() {
                         }}>
                             <iframe
                                 id="chat_embed"
-                                src="https://www.twitch.tv/embed/baiano/chat?&darkpopout&parent=localhost"
+                                src="https://www.twitch.tv/embed/baiano/chat?&darkpopout&parent=idltv.vercel.app"
                                 height="100%"
                                 width="100%">
                             </iframe>

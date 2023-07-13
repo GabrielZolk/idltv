@@ -15,10 +15,11 @@ export default function Navbar() {
   const [gameMode, setGameMode] = useContext(GameModeContext);
   const [lendasMode, setLendasMode] = useContext(LendasModeContext);
   const [chatMode, setChatMode] = useContext(ChatModeContext);
-  
+
 
   const location = useLocation();
   const [activeTab, setActiveTab] = useState('MULTI');
+  const [showMenu, setShowMenu] = useState(false);
 
   useEffect(() => {
     if (location.pathname === '/') {
@@ -67,23 +68,32 @@ export default function Navbar() {
     setChatVisible(true);
   };
 
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+  };
+
   return (
     <header>
       <img src='./logo.png' alt='logo ilha das lendas' />
-      <div className='stream'>
-        <p>SELECIONE A TELA PRINCIPAL</p>
+      <div className={`stream menu ${showMenu ? 'show' : ''}`} >
+        <p className='stream-select-title'>SELECIONE A TELA PRINCIPAL</p>
         <ul>
           <li><p className={gameMode ? 'active' : ''} onClick={gameModeFc}>GAME</p> <span onClick={toggleGame}>{gameVisible ? <BsEye /> : <BsEyeSlash />}</span></li>
           <li><p className={lendasMode ? 'active' : ''} onClick={lendasModeFc}>LENDAS</p> <span onClick={toggleLendas}>{lendasVisible ? <BsEye /> : <BsEyeSlash />}</span></li>
           <li><p className={chatMode ? 'active' : ''} onClick={chatModeFc}>CHAT</p> <span onClick={toggleChat}>{chatVisible ? <BsEye /> : <BsEyeSlash />}</span> </li>
         </ul>
       </div>
-      <nav>
+      <nav className={`menu ${showMenu ? 'show' : ''}`}>
         <ul>
           <Link to='/'><li className={activeTab === 'MULTI' ? 'active' : ''}>MULTI</li></Link>
           <Link to='/cartinhas'><li className={activeTab === 'CARTINHAS' ? 'active' : ''}>CARTINHAS</li></Link>
         </ul>
       </nav>
+      <div className={showMenu ? 'bx-menu open' : 'bx-menu'} onClick={toggleMenu}>
+        <div className='bar'></div>
+        <div className='bar'></div>
+        <div className='bar'></div>
+      </div>
     </header>
   );
 }

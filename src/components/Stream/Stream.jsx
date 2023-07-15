@@ -1,6 +1,9 @@
 import { ChatContext, ChatModeContext } from '../../context/chatContext';
 import { GameContext, GameModeContext } from '../../context/gameContext';
 import { LendasContext, LendasModeContext } from '../../context/lendasContext';
+import ChatEmbed from '../ChatEmbed/ChatEmbed';
+import GameEmbed from '../GameEmbed/GameEmbed';
+import TwitchEmbed from '../TwitchEmbed/TwitchEmbed';
 import './Stream.style.css';
 
 import { useContext } from 'react';
@@ -19,113 +22,78 @@ export default function Stream() {
             <div className='container'>
                 <div className='left'>
                     {lendasMode && (
-                        <div className='embed-twitch' style={{
-                            display: lendasVisible ? 'flex' : 'none'
-                        }}>
-                            <iframe src="https://player.twitch.tv/?channel=baiano&parent=localhost" frameBorder="0" allowFullScreen="true" scrolling="no" height="100%" width="100%"></iframe>
-                        </div>
+                        <TwitchEmbed display={lendasVisible ? 'flex' : 'none'} />
                     )}
                     {gameMode && (
-                        <div className='embed-youtube' style={{
-                            display: gameVisible ? 'flex' : 'none',
-                            height: '80vh',
-                            width: '72vw',
-                            marginLeft: '5px'
-                        }}>
-                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Ujia4cLrE6k" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
-                        </div>
+                        <GameEmbed
+                            display={gameVisible ? 'flex' : 'none'}
+                            height={'80vh'}
+                            width={'72vw'}
+                            marginLeft={'5px'} />
                     )}
                     {chatMode && (
-                        <div className='embed-chat' style={{
-                            display: chatVisible ? 'flex' : 'none',
-                            width: '60vw',
-                            height: '80vh',
-                            marginLeft: '5px',
-                            marginRight: '5px',
-                        }}>
-                            <iframe
-                                id="chat_embed"
-                                src="https://www.twitch.tv/embed/baiano/chat?&darkpopout&parent=idltv.vercel.app"
-                                height="100%"
-                                width="100%">
-                            </iframe>
-                        </div>
+                        <ChatEmbed
+                            display={chatVisible ? 'flex' : 'none'}
+                            width={'60vw'}
+                            height={'80vh'}
+                            marginLeft={'0px'}
+                            marginRight={'5px'} />
                     )}
                 </div>
                 <div className='right' style={{ display: gameVisible && lendasVisible && chatVisible ? 'block' : 'flex' }}>
                     {lendasMode && (
                         <>
-                            <div className='embed-youtube' style={{
-                                display: gameVisible ? 'flex' : 'none',
-                                height: lendasVisible ? '37%' : '100%',
-                                width: lendasVisible ? '26vw' : '72vw',
-                                marginLeft: '5px',
-                                marginBottom: '5px',
-                            }}>
-                                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Ujia4cLrE6k" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
-                            </div>
-                            <div className='embed-chat' style={{
-                                display: chatVisible ? 'flex' : 'none',
-                                height: gameVisible && lendasVisible ? '62%' : '100%',
-                                marginLeft: '5px',
-                                marginRight: '5px',
-                                width: gameVisible || lendasVisible ? '26vw' : '90vw'
-                            }}>
-                                <iframe
-                                    id="chat_embed"
-                                    src="https://www.twitch.tv/embed/baiano/chat?parent=localhost"
-                                    height="100%"
-                                    width="100%">
-                                </iframe>
-                            </div>
+                            <GameEmbed
+                                display={gameVisible ? 'flex' : 'none'}
+                                height={lendasVisible ? '37%' : '100%'}
+                                width={lendasVisible ? '26vw' : '72vw'}
+                                marginLeft={'5px'}
+                                marginBottom={'5px'} />
+
+                            <ChatEmbed
+                                display={chatVisible ? 'flex' : 'none'}
+                                width={gameVisible || lendasVisible ? '26vw' : '90vw'}
+                                height={gameVisible && lendasVisible ? '62%' : '100%'}
+                                marginLeft={'5px'}
+                                marginRight={'5px'} />
                         </>
                     )}
                     {gameMode && (
                         <>
-                            <div className='embed-twitch' style={{
-                                display: lendasVisible ? 'flex' : 'none',
-                                width: gameVisible ? '26vw' : '70vw',
-                                height: gameVisible ? '40%' : '100%',
-                                marginLeft: '5px',
-                                marginBottom: '5px'
-                            }}>
-                                <iframe src="https://player.twitch.tv/?channel=baiano&parent=localhost" frameBorder="0" allowFullScreen="true" scrolling="no" height="100%" width="100%"></iframe>
-                            </div>
-                            <div className='embed-chat' style={{
-                                display: chatVisible ? 'flex' : 'none',
-                                height: gameVisible && lendasVisible ? '59%' : '100%',
-                                marginLeft: '5px',
-                                marginRight: '5px',
-                                width: gameVisible || lendasVisible ? '26vw' : '90vw'
-                            }}>
-                                <iframe
-                                    id="chat_embed"
-                                    src="https://www.twitch.tv/embed/baiano/chat?parent=localhost"
-                                    height="100%"
-                                    width="100%">
-                                </iframe>
-                            </div>
+                            <TwitchEmbed
+                                display={lendasVisible ? 'flex' : 'none'}
+                                width={gameVisible ? '26vw' : '70vw'}
+                                height={gameVisible ? '40%' : '100%'}
+                                marginLeft={'5px'}
+                                marginBottom={'5px'}
+                            />
+
+                            <ChatEmbed
+                                display={chatVisible ? 'flex' : 'none'}
+                                width={gameVisible || lendasVisible ? '26vw' : '90vw'}
+                                height={gameVisible && lendasVisible ? '59%' : '100%'}
+                                marginLeft={'5px'}
+                                marginRight={'5px'}
+                            />
                         </>
                     )}
                     {chatMode && (
                         <>
-                            <div className='embed-twitch' style={{
-                                display: lendasVisible ? 'flex' : 'none',
-                                width: chatVisible ? '38vw' : '45vw',
-                                height: chatVisible ? '49%' : '100%',
-                                marginLeft: '5px',
-                                marginBottom: '5px'
-                            }}>
-                                <iframe src="https://player.twitch.tv/?channel=baiano&parent=localhost" frameBorder="0" allowFullScreen="true" scrolling="no" height="100%" width="100%"></iframe>
-                            </div>
-                            <div className='embed-youtube' style={{
-                                display: gameVisible ? 'flex' : 'none',
-                                width: chatVisible ? '38vw' : '53vw',
-                                height: chatVisible ? '49%' : '100%',
-                                marginLeft: '5px'
-                            }}>
-                                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Ujia4cLrE6k" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
-                            </div>
+                            <TwitchEmbed
+                                display={lendasVisible ? 'flex' : 'none'}
+                                width={chatVisible ? '38vw' : '45vw'}
+                                height={chatVisible ? '49%' : '100%'}
+                                marginLeft={'0px'}
+                                marginBottom={'5px'}
+                            />
+                            
+                            <GameEmbed
+                                display={gameVisible ? 'flex' : 'none'}
+                                width={chatVisible ? '38vw' : '53vw'}
+                                height={chatVisible ? '49%' : '100%'}
+                                marginLeft={'0px'}
+                                marginTop={'10px'}
+                            />
                         </>
                     )}
                 </div>

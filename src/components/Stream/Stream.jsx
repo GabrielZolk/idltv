@@ -32,7 +32,7 @@ export default function Stream() {
                             width: '72vw',
                             marginLeft: '5px'
                         }}>
-                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/e4K9Dqh5F3M" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Ujia4cLrE6k" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                         </div>
                     )}
                     {chatMode && (
@@ -62,7 +62,7 @@ export default function Stream() {
                                 marginLeft: '5px',
                                 marginBottom: '5px',
                             }}>
-                                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/e4K9Dqh5F3M" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Ujia4cLrE6k" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                             </div>
                             <div className='embed-chat' style={{
                                 display: chatVisible ? 'flex' : 'none',
@@ -124,7 +124,7 @@ export default function Stream() {
                                 height: chatVisible ? '49%' : '100%',
                                 marginLeft: '5px'
                             }}>
-                                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/e4K9Dqh5F3M" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Ujia4cLrE6k" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                             </div>
                         </>
                     )}
